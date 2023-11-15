@@ -1,9 +1,12 @@
 const ground = document.querySelectorAll(".tanah");
 const mole = document.querySelectorAll(".tikus");
 const start = document.querySelector(".start");
+const scoreBoard = document.querySelector(".score");
+const pop = document.querySelector("#pop");
 
 let groundBefore;
 let clear;
+let score;
 
 function randomGround(ground) {
   const g = Math.floor(Math.random() * ground.length);
@@ -26,11 +29,29 @@ function appearMole() {
 
   setTimeout(() => {
     gRandom.classList.remove("muncul");
-    appearMole();
+    if (!clear) {
+      appearMole();
+    }
   }, tRandom);
 }
 
 function startPlay() {
+  clear = false;
+  score = 0;
+  scoreBoard.textContent = 0;
   appearMole();
-  setTimeout(() => {}, 10000);
+  setTimeout(() => {
+    clear = true;
+  }, 5000);
 }
+
+function pow() {
+  score++;
+  this.parentNode.classList.remove("muncul");
+  pop.play();
+  scoreBoard.textContent = score;
+}
+
+mole.forEach((m) => {
+  m.addEventListener("click", pow);
+});

@@ -1,7 +1,9 @@
-.title {
+.title,
+.score {
   font-size: 5rem;
   text-align: center;
   font-family: Arial;
+  margin: 10px;
 }
 
 button {
@@ -12,8 +14,12 @@ button {
 .container {
   width: 600px;
   margin: auto;
+  cursor: url("../images/palu1.png"), auto;
 }
 
+.container:active {
+  cursor: url("../images/palu2.png"), auto;
+}
 .tanah {
   width: 200px;
   height: 200px;

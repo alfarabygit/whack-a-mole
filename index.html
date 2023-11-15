@@ -12,9 +12,11 @@
     <title>Whack a Mole</title>
   </head>
   <body>
-    <h1 class="title" onclick="startPlay()">Whack a Mole</h1>
+    <h1 class="title">Whack a Mole</h1>
 
-    <button class="play">Start !</button>
+    <h2 class="score">0</h2>
+
+    <button class="play" onclick="startPlay()">Start !</button>
     <div class="container">
       <div class="tanah">
         <div class="tikus"></div>
@@ -35,7 +37,7 @@
         <div class="tikus"></div>
       </div>
     </div>
-
+    <audio src="assets/audio/pop.wav" id="pop"></audio>
     <!-- JS Manual -->
     <script src="assets/js/main.js"></script>
   </body>
